@@ -1,0 +1,47 @@
+\documentclass[14pt,a4paper,report]{article}
+\usepackage[a4paper, mag=1000, left=2.5cm, right=1cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks]{hyperref}
+\usepackage{listings} 
+\usepackage{caption}
+\usepackage{mathtools}
+\DeclareCaptionFont{white}{\color{white}} 
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+
+\begin{document}
+	% Оформление титульного листа
+	\begin{titlepage}
+		\begin{center}
+			\textbf{\LARGE Белорусский государственный университет\\[5mm]
+				Факультет прикладной математики и информатики\\[45mm]}
+			
+			\vfill
+			
+			\textbf{\LARGE Отчет по домашней работе\\[5mm]
+				Вычисление криволинейного интеграла по замкнутому контуру от комплексного переменного в зависимости от разных случаев задания контура\\[35mm]
+			}
+		\end{center}
+		
+		\hfill
+		\begin{minipage}{.40\textwidth}
+			\textbf{\Large Выполнил студент 2 курса 7 группы:\\[2mm] 
+			Каркоцкий Александр Геннадьевич}
+			
+			\textbf{\Large Преподаватель:\\[2mm] 
+			Ушаков Александр Сергеевич\\[5mm]}
+		\end{minipage}%
+		\vfill
+		\begin{center}
+			\textbf{\Large Минск-2022 г.}
+		\end{center}
+	\end{titlepage}
+	
+\textbf{\Large Вычислить интеграл\begin{equation*}\oint_C{e^z dz \over{(z-i)^2(z-2)}}\end{equation*} если контур задан а) $|z-i|$ = 2, б) $|x+2-i|$ = 3.\\[5mm]}
+	\textbf{\Large	Решение:\\[5mm]}
+\Large{а) В круг $|z - i|$ < 2 попадает точка z = i. Записываем функцию в виде $e^z \over{(z-2)\over{(z-i)^2}}$ и вычисляем интеграл $\oint_C{ e^z dz \over{(z-i)^2(z-2)}}$ = $2\pi i($$ e^z \over(z-2)$$)^\prime$$|_i$ = $2\pi i$$e^z(z-2) - e^z \over(z-2)^2$$|_i$ = $2\pi i$$e^z(z-3) \over(z-2)^2$$|_i$ = $2\pi i$$e^i(i-3) \over(i-2)^2$.\\[5mm]
+б) В круг $|z + 2 - i| < 3$ входят две точки $z_1 = i$ и $z_2 = -2$. Запишем интеграл в виде: $\oint_C{f(z)dz}$ = $\oint_{C_1}{f(z)dz}$ + $\oint_{C_2}{f(z)dz}$, причем каждый из контуров $C_1$ и $C_2$ охватывает только одну из точек $z_1$ и $z_2$. В качестве контура $C_1$ возьмем окружность из пункта а). Тогда $\oint_{C_1}{f(z)dz}$ = $2\pi i$$e^i(i-3) \over(i-2)^2$.
+В качестве контура $C_2$ возьмем окружность $|z + 2 + i| = 2$. Тогда дробь примет вид $e^z(z+2) \over{(z-i)^2(z-2)\over{(z+2)}}$. Вычислим интеграл $\oint_{C_2}{e^z dz \over{(z-i)^2(z-2)}}$ = $2 \pi i$$e^{-2}*0 \over-4(2+i)^2$ = $0$. Тогда  $\oint_C{f(z)dz}$ = $\oint_{C_1}{f(z)dz}$ + $\oint_{C_2}{f(z)dz}$ = $2\pi i$$e^i(i+1) \over(i+2)^2$.}
+\end{document}
